@@ -1,0 +1,259 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 25px;
+}
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  h1 {
+    font-size: 25px;
+    margin: 0;
+    padding: 20px 0;
+  }
+  .option-container {
+    display: flex;
+    align-items: center;
+    a {
+      font-size: 15px;
+      padding: 0 20px;
+    }
+  }
+}
+.statis {
+  color: #eee;
+  margin-top: 15px;
+}
+.statis .box {
+  position: relative;
+  padding: 0px;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-bottom: 25px;
+}
+.statis .box h3:after {
+  content: "";
+  height: 2px;
+  width: 70%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.12);
+  display: block;
+  margin-top: 10px;
+}
+.statis .box i {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  font-size: 22px;
+  padding: 15px;
+  top: -25px;
+  left: -25px;
+  background-color: rgba(255, 255, 255, 0.15);
+  line-height: 60px;
+  text-align: right;
+  border-radius: 50%;
+}
+.warning {
+  background-color: #f0ad4e;
+}
+.danger {
+  background-color: #d9534f;
+}
+.success {
+  background-color: #5cb85c;
+}
+.inf {
+  background-color: #5bc0de;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 1em;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+table tbody {
+  display: block;
+  max-height: 500px;
+  overflow-y: scroll;
+  tr td:nth-child(1){
+    font-weight: bold;
+  }
+}
+
+table thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+.footer {
+  min-height: 50px;
+  background-color: #99999954;
+  margin-top: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+
+  iframe{
+    width: -webkit-fill-available;
+    height: 450px !important;
+
+  }
+
+
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: 1px solid #ccc; }
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		/* Now like a table header */
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	/*
+	Label the data
+  */
+
+
+	td:nth-of-type(1):before { content: "COUNTRY"; }
+	td:nth-of-type(2):before { content: "CONFIRMED"; }
+	td:nth-of-type(3):before { content: "DEATHS"; }
+	td:nth-of-type(4):before { content: "RECOVERED"; }
+	td:nth-of-type(5):before { content: "POPULATION"; }
+	td:nth-of-type(6):before { content: "TODAY"; }
+
+}
+
+
+iframe{
+
+
+  width: -webkit-fill-available;
+  height: 800px;
+
+}
+
+.cover-hide{
+  height: 70px;
+  background: white;
+  position: relative;
+  top: -70px;
+}
+

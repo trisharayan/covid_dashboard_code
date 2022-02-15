@@ -1,0 +1,85 @@
+<div class="dashboard-container">
+  <div class="top-nav">
+    <h1>Covid-19 Tracker</h1>
+    <div class="option-container">
+      <a routerLink="/USA">USA COVID count</a>
+      <a routerLink="/about">About</a>
+    </div>
+  </div>
+  <section class='statis text-center'>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="box bg-primary">
+            <i class="fa fa-eye"></i>
+            <h3> {{count["active"] | number}}</h3>
+            <p class="lead">Active Cases</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="box danger">
+            <i class="fa fa-user-o"></i>
+            <h3> {{count["deaths"] | number}}</h3>
+            <p class="lead">Deaths</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="box warning">
+            <i class="fa fa-shopping-cart"></i>
+            <h3>{{count["confirmed"]| number}}</h3>
+            <p class="lead">Confirmed Cases</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="box success">
+            <i class="fa fa-handshake-o"></i>
+            <h3>{{count["recovered"] | number}}</h3>
+            <p class="lead">Recovered Cases</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+<section >
+<iframe src="assets/worldmap.html"></iframe>
+</section>
+
+
+
+<div #container></div>
+<section class="worldCountTable">
+  <table>
+    <caption>World COVID count</caption>
+    <thead>
+      <tr>
+        <th scope="col">Country</th>
+        <th scope="col">Confirmed</th>
+        <th scope="col">Deaths</th>
+        <th scope="col">Recovered</th>
+        <th scope="col">Population</th>
+        <th scope="col">Today</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of worldcounttable">
+        <td>{{country.name}}</td>
+        <td>{{country.latest_data.confirmed | number}}</td>
+        <td>{{country.latest_data.deaths | number}}</td>
+        <td>{{country.latest_data.recovered | number}}</td>
+        <td>{{country.population | number}}</td>
+        <td>Deaths:{{country.today.deaths | number}}<br>
+          Confirmed:{{country.today.confirmed | number}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+
+</div>
+<div class="footer">
+  Source: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports">WHO Situation Reports</a>
+  <div>
